@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS task_schema.tasks;
+
+CREATE TABLE task_schema.tasks(
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    description TEXT NOT NULL,
+    assignee BIGINT NOT NULL,
+    status VARCHAR(20) DEFAULT 'TO DO' CHECK (status in ('TO DO','IN PROGRESS','DONE')),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_assignee FOREIGN KEY(assignee)
+    REFERENCES task_schema.users(id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+);
