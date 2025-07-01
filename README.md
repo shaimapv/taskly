@@ -13,20 +13,6 @@ This is the **backend** of the Taskly application – a lightweight, reactive ta
 
 ---
 
-## 📂 Project Structure
-
-taskly-backend/
-├── src/
-│ ├── main/
-│ │ ├── java/com/taskmanagement/taskly/
-│ │ │ ├── Controller/
-│ │ │ ├── Entity/
-│ │ │ ├── Repository/
-│ │ │ └── Service/
-│ │ └── resources/
-│ │ └── application.yml
-└── pom.xml
-
 ## 🧪 API Features
 
 - Create, update, delete tasks
